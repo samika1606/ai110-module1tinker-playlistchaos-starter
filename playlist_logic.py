@@ -59,7 +59,7 @@ def normalize_song(raw: Song) -> Song:
         "tags": tags,
     }
 
-#Part 3 refactored the function using claude
+#Part 3 refactored the function using claude to make mroe efficent
 def classify_song(song: Song, profile: Dict[str, object]) -> str:
     """Return a mood label given a song and user profile.
 
