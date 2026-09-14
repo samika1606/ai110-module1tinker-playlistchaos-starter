@@ -123,8 +123,8 @@ def compute_playlist_stats(playlists: PlaylistMap) -> Dict[str, object]:
     chill = playlists.get("Chill", [])
     mixed = playlists.get("Mixed", [])
 
-    total = len(all_songs)
-    hype_ratio = len(hype) / total if total > 0 else 0.0
+    total = len(all_songs) # Part 2 Bug 2 fix average energy
+    hype_ratio = len(hype) / total if total > 0 else 0.0 # Part 2 Bug 2 fix hype ratio
 
     avg_energy = 0.0
     if all_songs:
