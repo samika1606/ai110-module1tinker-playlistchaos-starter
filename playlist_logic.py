@@ -59,7 +59,7 @@ def normalize_song(raw: Song) -> Song:
         "tags": tags,
     }
 
-
+#Part 3 refactored the function using claude
 def classify_song(song: Song, profile: Dict[str, object]) -> str:
     """Return a mood label given a song and user profile.
 
@@ -175,7 +175,7 @@ def search_songs(
 
     for song in songs:
         value = str(song.get(field, "")).lower()
-        if q in value:
+        if q in value: #Part 1 bug: it for query in value (ac in ACDC)
             filtered.append(song)
 
     return filtered
@@ -191,7 +191,7 @@ def lucky_pick(
     elif mode == "chill":
         songs = playlists.get("Chill", [])
     else:
-        songs = playlists.get("Hype", []) + playlists.get("Chill", []) + playlists.get("Mixed", [])
+        songs = playlists.get("Hype", []) + playlists.get("Chill", []) + playlists.get("Mixed", []) #Part 2 bug 3: include mixed in lucky pick
 
     return random_choice_or_none(songs)
 
